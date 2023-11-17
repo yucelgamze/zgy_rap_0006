@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZGY_DO_YARIYIL</DOMNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000004</LENG>
+    <OUTPUTLEN>000004</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Yarıyıl Domain</DDTEXT>
+    <DOMMASTER>E</DOMMASTER>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <DOMNAME>ZGY_DO_YARIYIL</DOMNAME>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>I</DOMVALUE_L>
+     <DDTEXT>Birinci Yarıyıl</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZGY_DO_YARIYIL</DOMNAME>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>II</DOMVALUE_L>
+     <DDTEXT>İkinci Yarıyıl</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZGY_DO_YARIYIL</DOMNAME>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>III</DOMVALUE_L>
+     <DDTEXT>Üçüncü Yarıyıl</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZGY_DO_YARIYIL</DOMNAME>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>IV</DOMVALUE_L>
+     <DDTEXT>Dördüncü Yarıyıl</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZGY_DO_YARIYIL</DOMNAME>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>V</DOMVALUE_L>
+     <DDTEXT>Beşinci Yarıyıl</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZGY_DO_YARIYIL</DOMNAME>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>VI</DOMVALUE_L>
+     <DDTEXT>Altıncı Yarıyıl</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZGY_DO_YARIYIL</DOMNAME>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>VII</DOMVALUE_L>
+     <DDTEXT>Yedinci Yarıyıl</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZGY_DO_YARIYIL</DOMNAME>
+     <VALPOS>0008</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>VIII</DOMVALUE_L>
+     <DDTEXT>Sekizinci Yarıyıl</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

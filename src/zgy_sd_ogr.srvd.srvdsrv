@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for Öğrenci'
+define service ZGY_SD_OGR {
+  expose ZGY_C_OGR   as Ogrenci;
+  expose ZGY_C_SONUC as Sonuc;
+}

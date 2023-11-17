@@ -1,0 +1,74 @@
+@Metadata.layer: #PARTNER
+
+@UI:{ headerInfo:{ typeName:'Ogrenci',
+                   typeNamePlural: 'Ogrenciler',
+                   title:{ type: #STANDARD, label: 'Ogrenciler', value: 'Id' } }
+}
+annotate view ZGY_C_OGR with
+{
+  @UI.facet: [{ id:'Ogrenci',
+                purpose:#STANDARD,
+                type:#IDENTIFICATION_REFERENCE,
+                label: 'Ogrenci',
+                position:10 },
+               { id: 'Sonuc',
+                 purpose: #STANDARD ,
+                 type: #LINEITEM_REFERENCE,
+                 label: 'Sonuc',
+                 position: 20,
+                 targetElement: '_sonuc'}]
+
+  @UI : { lineItem: [{ position: 10, label: 'Ogrenci ID' }],
+        identification: [{ position: 10, label: 'Ogrenci ID' }]
+    }
+  Id;
+  @UI : { lineItem: [{ position: 20, label: 'Ad' }],
+  identification: [{ position: 20, label: 'Ad' }]
+  }
+  Ad;
+  @UI : { lineItem: [{ position: 30, label: 'Soyad' }],
+  identification: [{ position: 30, label: 'Soyad' }]
+  }
+  Soyad;
+  @UI : { lineItem: [{ position: 40, label: 'Yas' }],
+  identification: [{ position: 40, label: 'Yas' }]
+  }
+  Yas;
+  @UI : { lineItem: [{ position: 50, label: 'Ders' }],
+  identification: [{ position: 50, label: 'Ders' }]
+  }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'zgy_i_ders', element: 'Value'},
+   distinctValues: true }]
+  Ders;
+  @UI : { lineItem: [{ position: 60, label: 'Ders Saati' }],
+  identification: [{ position: 60, label: 'Ders Saati' }]
+  }
+  Derssure;
+  @UI : { lineItem: [{ position: 70, label: 'Durum' },
+    { type: #FOR_ACTION, dataAction: 'onayla', label: 'Durum Onayla 📌'  }
+  ],
+  identification: [{ position: 70, label: 'Durum' },
+  { type: #FOR_ACTION, dataAction: 'onayla', label: 'Durum Onayla 📌'  }
+  ]
+  }
+  Durum;
+    @UI : { lineItem: [{ position: 80, label: 'Cinsiyet' }],
+    identification: [{ position: 80, label: 'Cinsiyet' }]}
+
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZGY_i_cinsiyet', element: 'Value'},
+   distinctValues: true ,
+   additionalBinding: [{ localElement: 'Cinsiyetdesc',
+                         element: 'Description',
+                         usage: #FILTER_AND_RESULT }]}]
+  Cinsiyet;
+   @UI: { identification: [{ position: 85, label: '' }] }
+  Cinsiyetdesc;
+    @UI : { lineItem: [{ position: 90, label: 'Dogum Tarihi' }],
+    identification: [{ position: 90, label: 'Dogum Tarihi' }]
+  }
+  Dt;
+  @UI.hidden: true
+  Lastchangedat;
+  @UI.hidden: true
+  Locallastchangedat;
+}

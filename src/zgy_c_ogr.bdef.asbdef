@@ -1,0 +1,29 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZGY_C_OGR alias Ogrenci
+{
+  use create;
+  use update;
+  use delete;
+
+  use action onayla;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _sonuc { create; with draft; }
+}
+
+define behavior for ZGY_C_SONUC alias Sonuc
+{
+  use update;
+  use delete;
+
+
+  use association _ogr { with draft; }
+}

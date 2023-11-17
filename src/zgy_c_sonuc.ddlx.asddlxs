@@ -1,0 +1,57 @@
+@Metadata.layer: #PARTNER
+@UI:
+{
+    headerInfo : {
+                    typeName: 'Akademik Sonuc Detay',
+                    typeNamePlural: 'Akademik Sonuc Detaylar',
+                    title:{type: #STANDARD,label: 'Akademik Sonuc Detay',value: 'Id' },
+                    description :{ type: #STANDARD,label: 'Akademik Sonuc Detay' }
+                 },
+       presentationVariant: [{sortOrder: [{ by: 'Yariyil',direction: #ASC }] }]
+}
+//@Search.searchable: true
+annotate view ZGY_C_SONUC with
+{
+  @UI.facet: [{ id: 'Sonuc',
+            label: 'Sonuc',
+            purpose: #STANDARD,
+            type: #IDENTIFICATION_REFERENCE,
+            position: 10 }]
+
+  @UI: { identification: [{position: 10,label: 'Ogrenci ID' }] }
+  @UI.hidden: true
+  Id;
+  @UI: { lineItem: [{position: 20,label: 'Ders',importance: #HIGH }],
+    identification: [{position: 20,label: 'Ders' }] }
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity :{ name: 'zgy_i_ders',element: 'Value' },
+  additionalBinding: [{ localElement: 'Ders_desc',element: 'text' }]
+   }]
+  Ders;
+  @UI: { lineItem: [{position: 30,label: '',importance: #HIGH }],
+     identification: [{position: 30,label: '' }] }
+  @Search.defaultSearchElement: true
+  Ders_desc;
+  @UI: { lineItem: [{position: 40,label: 'Yarıyıl',importance: #HIGH }],
+     identification: [{position: 40,label: 'Yarıyıl' }] }
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity :{ name: 'zgy_i_yariyil',element: 'Value' },
+  additionalBinding: [{ localElement: 'Yariyil_desc',element: 'text' }]
+  }]
+  Yariyil;
+  @UI: { lineItem: [{position: 50,label: '',importance: #HIGH }],
+     identification: [{position: 50,label: '' }] }
+  @Search.defaultSearchElement: true
+  Yariyil_desc;
+  @UI: { lineItem: [{position: 60,label: 'Gecme Durumu',importance: #HIGH }],
+     identification: [{position: 60,label: 'Gecme Durumu' }] }
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity :{ name: 'zgy_i_not',element: 'Value' },
+  additionalBinding: [{ localElement: 'Notsonuc_desc',element: 'text' }]
+   }]
+  Notsonuc;
+  @UI: { lineItem: [{position: 70, label: '',importance: #HIGH  }],
+     identification: [{position: 70,label: '' }] }
+  @Search.defaultSearchElement: true
+  Notsonuc_desc;
+}

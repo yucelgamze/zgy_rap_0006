@@ -1,0 +1,74 @@
+managed implementation in class zbp_gy_i_ogr unique;
+strict ( 2 );
+with draft;
+
+define behavior for zgy_i_ogr alias Ogrenci
+persistent table zgy_t_0001
+draft table zgy_dt_0001
+lock master
+total etag Locallastchangedat
+authorization master ( global, instance ) // global authorization eklendi.
+etag master Lastchangedat
+{
+  create;
+  update ( precheck ); //precheck eklendi
+  delete;
+
+  // create butonunu association'a ekleme yöntemi:
+  association _sonuc { create; with draft; }
+
+  field ( numbering : managed, readonly ) Id;
+  field ( readonly ) Cinsiyetdesc;
+
+  action ( features : instance, authorization : update ) onayla result [1] $self;
+
+  validation uygunYas on save { field Yas; create; }
+
+  determination dersSaat on save { field Ders; }
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zgy_t_0001
+    {
+      Id                 = id;
+      Ad                 = ad;
+      Soyad              = soyad;
+      Yas                = yas;
+      Ders               = ders;
+      Derssure           = derssure;
+      Durum              = durum;
+      Cinsiyet           = cinsiyet;
+      Dt                 = dt;
+      Lastchangedat      = lastchangedat;
+      Locallastchangedat = locallastchangedat;
+    }
+}
+
+define behavior for zgy_i_sonuc alias Sonuc
+persistent table zgy_t_0002
+draft table zgy_dt_0002
+lock dependent by _ogr
+authorization dependent by _ogr
+etag master Lastchangedat
+{
+  update;
+  delete;
+
+  field ( readonly ) Id;
+  field ( readonly ) Ders_desc;
+  field ( readonly ) Yariyil_desc;
+  field ( readonly ) Notsonuc_desc;
+  association _ogr { with draft; }
+
+  mapping for zgy_t_0002
+    {
+      Id       = id;
+      Ders     = ders;
+      Yariyil  = yariyil;
+      Notsonuc = notsonuc;
+    }
+}
